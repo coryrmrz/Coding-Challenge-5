@@ -8,3 +8,9 @@ const inventory = [
 ];
 
 console.log(inventory); //Inventory Output
+
+//Task 2: Create an Orders Array of Order Objects
+
+const orders = []; //empty array to store customer orders
+
+console.log(orders); //Orders output displaying customerName, items, and status
