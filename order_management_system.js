@@ -14,3 +14,24 @@ console.log(inventory); //Inventory Output
 const orders = []; //empty array to store customer orders
 
 console.log(orders); //Orders output displaying customerName, items, and status
+
+//Task 3: Create a function to Place an Order
+
+function placeOrder(customerName, orderedItems) { //function to place an order
+    for (let orderedItem of orderedItems) {
+        const product = inventory.find(item => item.name === orderedItem.name); //find product and item names
+        if (product.quantity < orderedItem.quantity) { //check for sufficient inventory
+            console.log(`${orderItem.name} - Insufficient Stock`); //error message for insufficient items in stock
+            return;
+        };
+    };
+    orderedItems.forEach (orderedItem => {
+        const product = inventory.find(item => item.name === orderedItem.name) //find products and items searched
+        product.quantity -= orderedItem.quantity; //subtract product selected from inventory
+    });
+    let newOrder = [
+        { customerName: customerName, items: orderedItems, status: `Pending`}; //New order, to be added to orders array
+    ];
+    orders.push(newOrder); //New order added to orders array
+    console.log("Successful Order:", newOrder); //Orders output
+};
