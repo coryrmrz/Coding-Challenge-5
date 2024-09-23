@@ -35,3 +35,17 @@ function placeOrder(customerName, orderedItems) { //function to place an order
     orders.push(newOrder); //New order added to orders array
     console.log("Successful Order:", newOrder); //Orders output
 };
+
+//Task 4: Create a function to Calculate Total for an Order
+
+function calculateOrderTotal(order) {
+    let total = 0; //start total at 0
+    order.items.forEach(orderedItem => { //find price for each individual item
+        const product = inventory.find(item => item.name === orderedItem.name);//find product and item names
+        if (product) {
+            total += product.price * item.quantity; //multiply price by quantity ordered to get total
+        }
+    });
+    return total; //return total price
+}
+console.log(`Total - $${calculateOrderTotal(order)}`); //Output total of the order
