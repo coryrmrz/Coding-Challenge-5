@@ -60,3 +60,12 @@ function completeOrder(customername) {
 } else{
     console.log(`${customerName}'s Order Not Found`); //order not found output
 };
+
+//Task 6: Create a Function to Check Pending Orders
+
+function checkPendingOrders() {
+    const pendingOrders = orders.filter(order => order.status === "Pending"); //find and filter pending orders
+    pendingOrders.forEach(order => { //find details for each order
+        console.log(`Customer: ${order.customerName}, Status: ${order.status}, Items: ${item.name} - ${item.quantity}`); //display output of customer name, status, and items with quantities
+    });
+};
